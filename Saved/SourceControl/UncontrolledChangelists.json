@@ -1,0 +1,16 @@
+{
+	"version": 1,
+	"changelists": [
+		{
+			"guid": "00000000000000000000000000000000",
+			"description": "Default Uncontrolled Changelist",
+			"files": [
+				"C:/Users/tomho/Documents/Unreal Projects/delvemake2/Content/StarterContent/Props/MaterialSphere.uasset",
+				"C:/Users/tomho/Documents/Unreal Projects/delvemake2/Content/NewMap.umap",
+				"C:/Users/tomho/Documents/Unreal Projects/delvemake2/Content/NewMap_BuiltData.uasset",
+				"C:/Users/tomho/Documents/Unreal Projects/delvemake2/Content/StarterContent/Shapes/Shape_Cube.uasset",
+				"C:/Users/tomho/Documents/Unreal Projects/delvemake2/Content/DelveMakeMap.umap"
+			]
+		}
+	]
+}

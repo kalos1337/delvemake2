@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "delvemake2",
+			"Path": "..\\Source\\delvemake2.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "delvemake2Editor",
+			"Path": "..\\Source\\delvemake2Editor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}
