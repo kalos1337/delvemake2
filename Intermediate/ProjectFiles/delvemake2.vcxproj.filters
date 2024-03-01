@@ -11,8 +11,12 @@
     <None Include="..\..\Source\delvemake2Editor.Target.cs">
       <Filter>Source</Filter>
     </None>
+    <None Include="..\..\.gitattributes" />
+    <None Include="..\..\.gitignore" />
     <None Include="..\..\.vsconfig" />
+    <None Include="..\..\delvemake2.png" />
     <None Include="..\..\UpgradeLog.htm" />
+    <None Include="..\..\UpgradeLog2.htm" />
     <Filter Include="Config">
       <UniqueIdentifier>{FA535FFB-25E1-3D20-B416-52F9BE21E06E}</UniqueIdentifier>
     </Filter>
@@ -40,12 +44,6 @@
     <ClInclude Include="..\..\Source\delvemake2\delvemake2.h">
       <Filter>Source\delvemake2</Filter>
     </ClInclude>
-    <ClCompile Include="..\..\Source\delvemake2\FloatingActor.cpp">
-      <Filter>Source\delvemake2</Filter>
-    </ClCompile>
-    <ClInclude Include="..\..\Source\delvemake2\FloatingActor.h">
-      <Filter>Source\delvemake2</Filter>
-    </ClInclude>
     <Filter Include="Source\delvemake2\Private">
       <UniqueIdentifier>{376DF60A-1D4E-368B-B3C6-4B96C662433D}</UniqueIdentifier>
     </Filter>
@@ -56,6 +54,18 @@
       <Filter>Source\delvemake2\Private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\delvemake2\Private\ChunkMaster.cpp">
+      <Filter>Source\delvemake2\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\delvemake2\Private\DelveMakeCharacter.cpp">
+      <Filter>Source\delvemake2\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\delvemake2\Private\DelveMakeGameMode.cpp">
+      <Filter>Source\delvemake2\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\delvemake2\Private\DelveMakeUtils.cpp">
+      <Filter>Source\delvemake2\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\delvemake2\Private\DelveMakeSave.cpp">
       <Filter>Source\delvemake2\Private</Filter>
     </ClCompile>
     <Filter Include="Source\delvemake2\Public">
@@ -70,14 +80,16 @@
     <ClInclude Include="..\..\Source\delvemake2\Public\ChunkMaster.h">
       <Filter>Source\delvemake2\Public</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\Source\delvemake2\Private\DelveMakeUtils.cpp">
-      <Filter>Source\delvemake2\Private</Filter>
-    </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
+    <ClInclude Include="..\..\Source\delvemake2\Public\DelveMakeCharacter.h">
+      <Filter>Source\delvemake2\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\delvemake2\Public\DelveMakeGameMode.h">
+      <Filter>Source\delvemake2\Public</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\delvemake2\Public\DelveMakeUtils.h">
+      <Filter>Source\delvemake2\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\delvemake2\Public\DelveMakeSave.h">
       <Filter>Source\delvemake2\Public</Filter>
     </ClInclude>
   </ItemGroup>

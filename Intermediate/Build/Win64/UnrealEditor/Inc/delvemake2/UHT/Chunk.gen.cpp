@@ -39,9 +39,9 @@ template<> DELVEMAKE2_API UScriptStruct* StaticStruct<FChunkDimensions>()
 #endif
 		static const UECodeGen_Private::FUInt32PropertyParams NewProp_Width;
 #if WITH_METADATA
-		static const UECodeGen_Private::FMetaDataPairParam NewProp_Height_MetaData[];
+		static const UECodeGen_Private::FMetaDataPairParam NewProp_MaxHeight_MetaData[];
 #endif
-		static const UECodeGen_Private::FUInt32PropertyParams NewProp_Height;
+		static const UECodeGen_Private::FUInt32PropertyParams NewProp_MaxHeight;
 #if WITH_METADATA
 		static const UECodeGen_Private::FMetaDataPairParam NewProp_Depth_MetaData[];
 #endif
@@ -65,11 +65,11 @@ template<> DELVEMAKE2_API UScriptStruct* StaticStruct<FChunkDimensions>()
 #endif
 	const UECodeGen_Private::FUInt32PropertyParams Z_Construct_UScriptStruct_FChunkDimensions_Statics::NewProp_Width = { "Width", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::UInt32, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FChunkDimensions, Width), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FChunkDimensions_Statics::NewProp_Width_MetaData), Z_Construct_UScriptStruct_FChunkDimensions_Statics::NewProp_Width_MetaData) };
 #if WITH_METADATA
-	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FChunkDimensions_Statics::NewProp_Height_MetaData[] = {
+	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FChunkDimensions_Statics::NewProp_MaxHeight_MetaData[] = {
 		{ "ModuleRelativePath", "Public/Chunk.h" },
 	};
 #endif
-	const UECodeGen_Private::FUInt32PropertyParams Z_Construct_UScriptStruct_FChunkDimensions_Statics::NewProp_Height = { "Height", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::UInt32, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FChunkDimensions, Height), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FChunkDimensions_Statics::NewProp_Height_MetaData), Z_Construct_UScriptStruct_FChunkDimensions_Statics::NewProp_Height_MetaData) };
+	const UECodeGen_Private::FUInt32PropertyParams Z_Construct_UScriptStruct_FChunkDimensions_Statics::NewProp_MaxHeight = { "MaxHeight", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::UInt32, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FChunkDimensions, MaxHeight), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FChunkDimensions_Statics::NewProp_MaxHeight_MetaData), Z_Construct_UScriptStruct_FChunkDimensions_Statics::NewProp_MaxHeight_MetaData) };
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FChunkDimensions_Statics::NewProp_Depth_MetaData[] = {
 		{ "ModuleRelativePath", "Public/Chunk.h" },
@@ -78,7 +78,7 @@ template<> DELVEMAKE2_API UScriptStruct* StaticStruct<FChunkDimensions>()
 	const UECodeGen_Private::FUInt32PropertyParams Z_Construct_UScriptStruct_FChunkDimensions_Statics::NewProp_Depth = { "Depth", nullptr, (EPropertyFlags)0x0010000000000000, UECodeGen_Private::EPropertyGenFlags::UInt32, RF_Public|RF_Transient|RF_MarkAsNative, nullptr, nullptr, 1, STRUCT_OFFSET(FChunkDimensions, Depth), METADATA_PARAMS(UE_ARRAY_COUNT(Z_Construct_UScriptStruct_FChunkDimensions_Statics::NewProp_Depth_MetaData), Z_Construct_UScriptStruct_FChunkDimensions_Statics::NewProp_Depth_MetaData) };
 	const UECodeGen_Private::FPropertyParamsBase* const Z_Construct_UScriptStruct_FChunkDimensions_Statics::PropPointers[] = {
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FChunkDimensions_Statics::NewProp_Width,
-		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FChunkDimensions_Statics::NewProp_Height,
+		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FChunkDimensions_Statics::NewProp_MaxHeight,
 		(const UECodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FChunkDimensions_Statics::NewProp_Depth,
 	};
 	const UECodeGen_Private::FStructParams Z_Construct_UScriptStruct_FChunkDimensions_Statics::ReturnStructParams = {
@@ -128,12 +128,12 @@ template<> DELVEMAKE2_API UScriptStruct* StaticStruct<FChunkDimensions>()
 #if WITH_METADATA
 	const UECodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UChunk_Statics::Class_MetaDataParams[] = {
 #if !UE_BUILD_SHIPPING
-		{ "Comment", "/**\n * This class represents a chunk of voxel terrain and handles all high-level behaviors.\n */" },
+		{ "Comment", "// This class represents a chunk of blocks and handles placement and destruction\n" },
 #endif
 		{ "IncludePath", "Chunk.h" },
 		{ "ModuleRelativePath", "Public/Chunk.h" },
 #if !UE_BUILD_SHIPPING
-		{ "ToolTip", "This class represents a chunk of voxel terrain and handles all high-level behaviors." },
+		{ "ToolTip", "This class represents a chunk of blocks and handles placement and destruction" },
 #endif
 	};
 #endif
@@ -175,12 +175,12 @@ template<> DELVEMAKE2_API UScriptStruct* StaticStruct<FChunkDimensions>()
 		static const FClassRegisterCompiledInInfo ClassInfo[];
 	};
 	const FStructRegisterCompiledInInfo Z_CompiledInDeferFile_FID_delvemake2_Source_delvemake2_Public_Chunk_h_Statics::ScriptStructInfo[] = {
-		{ FChunkDimensions::StaticStruct, Z_Construct_UScriptStruct_FChunkDimensions_Statics::NewStructOps, TEXT("ChunkDimensions"), &Z_Registration_Info_UScriptStruct_ChunkDimensions, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FChunkDimensions), 1331606079U) },
+		{ FChunkDimensions::StaticStruct, Z_Construct_UScriptStruct_FChunkDimensions_Statics::NewStructOps, TEXT("ChunkDimensions"), &Z_Registration_Info_UScriptStruct_ChunkDimensions, CONSTRUCT_RELOAD_VERSION_INFO(FStructReloadVersionInfo, sizeof(FChunkDimensions), 1723714805U) },
 	};
 	const FClassRegisterCompiledInInfo Z_CompiledInDeferFile_FID_delvemake2_Source_delvemake2_Public_Chunk_h_Statics::ClassInfo[] = {
-		{ Z_Construct_UClass_UChunk, UChunk::StaticClass, TEXT("UChunk"), &Z_Registration_Info_UClass_UChunk, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UChunk), 2242583233U) },
+		{ Z_Construct_UClass_UChunk, UChunk::StaticClass, TEXT("UChunk"), &Z_Registration_Info_UClass_UChunk, CONSTRUCT_RELOAD_VERSION_INFO(FClassReloadVersionInfo, sizeof(UChunk), 4291347642U) },
 	};
-	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_delvemake2_Source_delvemake2_Public_Chunk_h_397132018(TEXT("/Script/delvemake2"),
+	static FRegisterCompiledInInfo Z_CompiledInDeferFile_FID_delvemake2_Source_delvemake2_Public_Chunk_h_2050321557(TEXT("/Script/delvemake2"),
 		Z_CompiledInDeferFile_FID_delvemake2_Source_delvemake2_Public_Chunk_h_Statics::ClassInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_delvemake2_Source_delvemake2_Public_Chunk_h_Statics::ClassInfo),
 		Z_CompiledInDeferFile_FID_delvemake2_Source_delvemake2_Public_Chunk_h_Statics::ScriptStructInfo, UE_ARRAY_COUNT(Z_CompiledInDeferFile_FID_delvemake2_Source_delvemake2_Public_Chunk_h_Statics::ScriptStructInfo),
 		nullptr, 0);

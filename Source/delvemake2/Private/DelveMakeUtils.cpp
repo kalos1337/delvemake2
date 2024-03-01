@@ -3,9 +3,24 @@
 
 #include "DelveMakeUtils.h"
 
-bool DelveMakeUtils::AreFloatsEqual(float A, float B, float Tolerance = KINDA_SMALL_NUMBER)
+FVector2D DelveMakeUtils::UECoordsToChunkCoords(FVector ueCoords)
 {
-	return FMath::Abs(A - B) <= Tolerance;
+	ueCoords = ueCoords / BLOCK_EDGE_LENGTH / (float)CHUNK_EDGE_LENGTH;
+	return FVector2D(FMath::FloorToInt32(ueCoords.X), FMath::FloorToInt32(ueCoords.Y));
+}
+
+FVector2D DelveMakeUtils::UECoordsToBlockCoords(FVector ueCoords)
+{
+	ueCoords = ueCoords / BLOCK_EDGE_LENGTH;
+	return FVector2D(ueCoords.X, ueCoords.Y);
+}
+
+FVector DelveMakeUtils::ChunkCoordsToUECoords(FVector2D chunkCoord)
+{
+	auto x = FMath::Floor(chunkCoord.X) * BLOCK_EDGE_LENGTH * (float)CHUNK_EDGE_LENGTH;;
+	auto y = FMath::Floor(chunkCoord.Y) * BLOCK_EDGE_LENGTH * (float)CHUNK_EDGE_LENGTH;;
+
+	return FVector(x, y, 0.f);
 }
 
 

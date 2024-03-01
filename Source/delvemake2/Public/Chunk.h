@@ -16,30 +16,38 @@ struct FChunkDimensions
 	UPROPERTY()
 	unsigned Width;
 	UPROPERTY()
-	unsigned Height;
+	unsigned MaxHeight;
 	UPROPERTY()
 	unsigned Depth;
 };
 
-/**
- * This class represents a chunk of voxel terrain and handles all high-level behaviors.
- */
+using FTerrainHeightGrid = TArray<TArray<unsigned>>;
+
+// This class represents a chunk of blocks and handles placement and destruction
 UCLASS()
 class DELVEMAKE2_API UChunk : public UObject
 {
+	friend class ADelveMakeCharacter;
 	GENERATED_BODY()
+	friend class AChunkMaster;
+
+protected:
+	virtual void ConditionalBeginDestroy();
 
 public:
 	UChunk();
 
-	// Method to initialize a chunk with given dimensions
-	bool InitializeChunk(const unsigned Width, const unsigned Height, const unsigned Depth);
-
-	// Method to get a block at specific coordinates within chunk
-	ABlock* GetBlock(const unsigned X, const unsigned Y, const unsigned Z);
+	void InitializeChunk(const FVector2D& NewChunkCoordinates, const unsigned Width, const unsigned MaxHeight, const unsigned Depth);
+	void PlaceBlock(const FVector& BlockLocation, EBlockType BlockType);
+	void DestroyBlock(ABlock* block);
+	void DestroyAllBlocks();
 
 private:
-	// FIXME: This might not be the best way to do this - 3dimensional array seems weird
-    TArray<TArray<TArray<ABlock*>>> Blocks;	
+	void SetUpHeightGrid();
+
+	FTerrainHeightGrid TerrainHeightGrid;
 	FChunkDimensions ChunkDimensions;
+	float BlockEdgeLength;
+	TArray<ABlock*> ChunkBlocks;
+	FVector2D ChunkCoordinates;
 };

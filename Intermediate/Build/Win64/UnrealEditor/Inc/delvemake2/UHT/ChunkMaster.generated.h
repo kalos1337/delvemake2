@@ -9,17 +9,26 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
+class UChunk;
 #ifdef DELVEMAKE2_ChunkMaster_generated_h
 #error "ChunkMaster.generated.h already included, missing '#pragma once' in ChunkMaster.h"
 #endif
 #define DELVEMAKE2_ChunkMaster_generated_h
 
-#define FID_delvemake2_Source_delvemake2_Public_ChunkMaster_h_15_SPARSE_DATA
-#define FID_delvemake2_Source_delvemake2_Public_ChunkMaster_h_15_SPARSE_DATA_PROPERTY_ACCESSORS
-#define FID_delvemake2_Source_delvemake2_Public_ChunkMaster_h_15_EDITOR_ONLY_SPARSE_DATA_PROPERTY_ACCESSORS
-#define FID_delvemake2_Source_delvemake2_Public_ChunkMaster_h_15_RPC_WRAPPERS_NO_PURE_DECLS
-#define FID_delvemake2_Source_delvemake2_Public_ChunkMaster_h_15_ACCESSORS
-#define FID_delvemake2_Source_delvemake2_Public_ChunkMaster_h_15_INCLASS_NO_PURE_DECLS \
+#define FID_delvemake2_Source_delvemake2_Public_ChunkMaster_h_17_SPARSE_DATA
+#define FID_delvemake2_Source_delvemake2_Public_ChunkMaster_h_17_SPARSE_DATA_PROPERTY_ACCESSORS
+#define FID_delvemake2_Source_delvemake2_Public_ChunkMaster_h_17_EDITOR_ONLY_SPARSE_DATA_PROPERTY_ACCESSORS
+#define FID_delvemake2_Source_delvemake2_Public_ChunkMaster_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execSpawnChunk); \
+	DECLARE_FUNCTION(execGetChunkAtCoord); \
+	DECLARE_FUNCTION(execUpdateWorld); \
+	DECLARE_FUNCTION(execInitializeWorld); \
+	DECLARE_FUNCTION(execComputeChunkCoords);
+
+
+#define FID_delvemake2_Source_delvemake2_Public_ChunkMaster_h_17_ACCESSORS
+#define FID_delvemake2_Source_delvemake2_Public_ChunkMaster_h_17_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesAChunkMaster(); \
 	friend struct Z_Construct_UClass_AChunkMaster_Statics; \
@@ -28,7 +37,7 @@ public: \
 	DECLARE_SERIALIZER(AChunkMaster)
 
 
-#define FID_delvemake2_Source_delvemake2_Public_ChunkMaster_h_15_ENHANCED_CONSTRUCTORS \
+#define FID_delvemake2_Source_delvemake2_Public_ChunkMaster_h_17_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API AChunkMaster(AChunkMaster&&); \
@@ -40,17 +49,17 @@ public: \
 	NO_API virtual ~AChunkMaster();
 
 
-#define FID_delvemake2_Source_delvemake2_Public_ChunkMaster_h_12_PROLOG
-#define FID_delvemake2_Source_delvemake2_Public_ChunkMaster_h_15_GENERATED_BODY \
+#define FID_delvemake2_Source_delvemake2_Public_ChunkMaster_h_13_PROLOG
+#define FID_delvemake2_Source_delvemake2_Public_ChunkMaster_h_17_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	FID_delvemake2_Source_delvemake2_Public_ChunkMaster_h_15_SPARSE_DATA \
-	FID_delvemake2_Source_delvemake2_Public_ChunkMaster_h_15_SPARSE_DATA_PROPERTY_ACCESSORS \
-	FID_delvemake2_Source_delvemake2_Public_ChunkMaster_h_15_EDITOR_ONLY_SPARSE_DATA_PROPERTY_ACCESSORS \
-	FID_delvemake2_Source_delvemake2_Public_ChunkMaster_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
-	FID_delvemake2_Source_delvemake2_Public_ChunkMaster_h_15_ACCESSORS \
-	FID_delvemake2_Source_delvemake2_Public_ChunkMaster_h_15_INCLASS_NO_PURE_DECLS \
-	FID_delvemake2_Source_delvemake2_Public_ChunkMaster_h_15_ENHANCED_CONSTRUCTORS \
+	FID_delvemake2_Source_delvemake2_Public_ChunkMaster_h_17_SPARSE_DATA \
+	FID_delvemake2_Source_delvemake2_Public_ChunkMaster_h_17_SPARSE_DATA_PROPERTY_ACCESSORS \
+	FID_delvemake2_Source_delvemake2_Public_ChunkMaster_h_17_EDITOR_ONLY_SPARSE_DATA_PROPERTY_ACCESSORS \
+	FID_delvemake2_Source_delvemake2_Public_ChunkMaster_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
+	FID_delvemake2_Source_delvemake2_Public_ChunkMaster_h_17_ACCESSORS \
+	FID_delvemake2_Source_delvemake2_Public_ChunkMaster_h_17_INCLASS_NO_PURE_DECLS \
+	FID_delvemake2_Source_delvemake2_Public_ChunkMaster_h_17_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
